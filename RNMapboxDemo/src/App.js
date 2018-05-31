@@ -1,19 +1,12 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
-import Map from "./components/Map/Map";
+import MapScreen from "./layouts/MapScreen/MapScreen";
+import HomeScreen from "./layouts/HomeScreen/HomeScreen";
+import { StackNavigator } from "react-navigation";
 
-export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Map />
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
+const App = StackNavigator({
+  Home: { screen: HomeScreen },
+  Map: { screen: MapScreen }
 });
+
+export default App;
